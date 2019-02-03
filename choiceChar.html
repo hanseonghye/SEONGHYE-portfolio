@@ -5,15 +5,17 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
+        html, body {
+            height: 100%; /* IMPORTANT!!! stretches viewport to 100% */
+            margin:0px;
+        }
         *{
             box-sizing: border-box;
         }
         #context{
             board:15px solid #000000;
             background: linear-gradient(to bottom, #020111 60%,#20202c 100%);
-            width: 1300px;
-            height: 500px;
-            ;
+            height: 100%;
         }
 
         .row {
@@ -52,6 +54,7 @@
         .likeImg{
             max-width: 20px;
             min-width: 18px;
+            padding-right: 3px;
             height: auto;
             display: inline-block;
         }
@@ -134,27 +137,29 @@
             color:rgba(0, 0, 0, 0.4);
         }
 
-        button {
+        .go-button {
+            background-color: #496aeb; /* Green */
             border: none;
-            color: black;
-            padding: 15px 32px;
+            color: white;
+            padding: 20px;
             text-align: center;
             text-decoration: none;
             font-size: 16px;
             cursor: pointer;
+            border-radius: 4px;
             display: block;
             margin-left: auto;
             margin-right: auto;
-            margin-bottom: 25px;
-            background-color: rgb(255, 255, 255);
-            border: 2px solid #555555;
         }
+
 
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 <div id="context">
+    <br>
+    <img src="img/backIcon.svg" style="width: 50px; height: auto; margin-left: 10px;" onclick="location.href='start.html'">
     <br><br>
 
     <div class="row">
@@ -165,16 +170,13 @@
                 </tr>
                 <tr>
                     <td>
-                        <div name="datapercent" value="2" class="skillbar clearfix " data-percent="65%">
+                        <div value="2" class="skillbar clearfix " data-percent="65%">
                             <div class="skillbar-title" style="background: #88cd2a;"><span>Skill</span></div>
                             <div class="skillbar-bar" style="background: #88cd2a;"></div>
                             <div class="skill-bar-percent">65%</div>
                         </div>
-                        <img class="likeImg" src="img/like.png">
-                        <img class="likeImg" src="img/like.png">
-                        <img class="likeImg" src="img/like.png">
-                        <img class="likeImg" src="img/like.png">
-                        <img class="likeImg" src="img/like.png">
+                        <div class="like" id="col1LikeDiv">
+                        </div>
                     </td>
                 </tr>
             </table>
@@ -193,9 +195,8 @@
                             <div class="skillbar-bar" style="background: #88cd2a;"></div>
                             <div class="skill-bar-percent">40%</div>
                         </div>
-                        <img class="likeImg" src="img/like.png">
-                        <img class="likeImg" src="img/like.png">
-                        <img class="likeImg" src="img/like.png">
+                        <div class="like" id="col2LikeDiv">
+                        </div>
                     </td>
                 </tr>
             </table>
@@ -214,24 +215,25 @@
                             <div class="skillbar-bar" style="background: #88cd2a;"></div>
                             <div class="skill-bar-percent">75%</div>
                         </div>
-                        <img class="likeImg" src="img/like.png">
-                        <img class="likeImg" src="img/like.png">
-                        <img class="likeImg" src="img/like.png">
-                        <img class="likeImg" src="img/like.png">
+                        <div class="like" id="col3LikeDiv">
+                        </div>
                     </td>
                 </tr>
             </table>
 
         </div>
+        <br>
+        <button onclick="go()" class="go-button">GO!</button>
 
-        <button onclick="go()" >GO!</button>
     </div> <!--end row div-->
 </div>
 
 <script>
     document.getElementById("col1").style.opacity=1;
     let selectedChar="col1";
-
+    makeLike("col1LikeDiv",5);
+    makeLike("col2LikeDiv",4);
+    makeLike("col3LikeDiv",4);
     jQuery('.skillbar').each(function(){
         jQuery(this).find('.skillbar-bar').animate({
             width:jQuery(this).attr('data-percent')
@@ -246,9 +248,22 @@
     }
 
     function go(){
-        let selectedCharDiv=document.getElementById(selectedChar);
-        console.log(selectedCharDiv.getElementsByClassName("skill-bar-percent")[0].textContent)
+        // let selectedCharDiv=document.getElementById(selectedChar);
+        // console.log(selectedCharDiv.getElementsByClassName("skill-bar-percent")[0].textContent)
+        //
+        // console.log(selectedCharDiv.getElementsByClassName("like")[0].innerText);
+        location.href="game.html?"
 
+    }
+
+    function makeLike(div,num){
+        document.getElementById(div).innerText=num;
+        for(let i=0;i<num;++i) {
+            let likeImg=document.createElement("img");
+            likeImg.setAttribute("src","img/like.png");
+            likeImg.setAttribute("class","likeImg");
+            document.getElementById(div).appendChild(likeImg);
+        }
     }
 </script>
 

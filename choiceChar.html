@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #context{
+            board:15px solid #000000;
+            background: linear-gradient(to bottom, #020111 60%,#20202c 100%);
+            width: 1300px;
+            height: 500px;
+            ;
+        }
+
+        .row {
+            content: "";
+            display: table block;
+            clear: both;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .column{
+            float:left;
+            max-width: 33.33%;
+            min-width: 33.32%;
+            padding: 10px;
+            opacity: 0.25;
+            /*background-color: rgba(228, 228, 228, 0.5);*/
+        }
+
+        .charTable th{
+            height:250px;
+        }
+
+        .charTable td{
+            height:30px;
+        }
+
+        .charTable  .thTag{
+            width:200px;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .likeImg{
+            max-width: 20px;
+            min-width: 18px;
+            height: auto;
+            display: inline-block;
+        }
+
+        .charTable{
+
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+        .skillbar {
+            font-family: 'Open Sans', 'sans-serif';
+            position:relative;
+            display:block;
+            margin-bottom:15px;
+            width:100%;
+            background:#eee;
+            height:35px;
+            border-radius:3px;
+            -moz-border-radius:3px;
+            -webkit-border-radius:3px;
+            -webkit-transition:0.4s linear;
+            -moz-transition:0.4s linear;
+            -ms-transition:0.4s linear;
+            -o-transition:0.4s linear;
+            transition:0.4s linear;
+            -webkit-transition-property:width, background-color;
+            -moz-transition-property:width, background-color;
+            -ms-transition-property:width, background-color;
+            -o-transition-property:width, background-color;
+            transition-property:width, background-color;
+        }
+
+        .skillbar-title {
+            position:absolute;
+            top:0;
+            left:0;
+            font-weight:bold;
+            font-size:13px;
+            color:#fff;
+            background:#6adcfa;
+            -webkit-border-top-left-radius:3px;
+            -webkit-border-bottom-left-radius:4px;
+            -moz-border-radius-topleft:3px;
+            -moz-border-radius-bottomleft:3px;
+            border-top-left-radius:3px;
+            border-bottom-left-radius:3px;
+        }
+
+        .skillbar-title span {
+            display:block;
+            background:rgba(0, 0, 0, 0.1);
+            padding:0 20px;
+            height:35px;
+            line-height:35px;
+            -webkit-border-top-left-radius:3px;
+            -webkit-border-bottom-left-radius:3px;
+            -moz-border-radius-topleft:3px;
+            -moz-border-radius-bottomleft:3px;
+            border-top-left-radius:3px;
+            border-bottom-left-radius:3px;
+        }
+
+        .skillbar-bar {
+            height:35px;
+            width:0px;
+            background:#6adcfa;
+            border-radius:3px;
+            -moz-border-radius:3px;
+            -webkit-border-radius:3px;
+        }
+
+        .skill-bar-percent {
+            position:absolute;
+            right:10px;
+            top:0;
+            font-size:11px;
+            height:35px;
+            line-height:35px;
+            color:#444;
+            color:rgba(0, 0, 0, 0.4);
+        }
+
+        button {
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 25px;
+            background-color: rgb(255, 255, 255);
+            border: 2px solid #555555;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="context">
+    <br><br>
+
+    <div class="row">
+        <div id="col1" class="column" onclick="selectChar('col1','col2','col3')">
+            <table class="charTable">
+                <tr>
+                    <th ><img class="thTag" src="img/pythonIcon.png"></th>
+                </tr>
+                <tr>
+                    <td>
+                        <div name="datapercent" value="2" class="skillbar clearfix " data-percent="65%">
+                            <div class="skillbar-title" style="background: #88cd2a;"><span>Skill</span></div>
+                            <div class="skillbar-bar" style="background: #88cd2a;"></div>
+                            <div class="skill-bar-percent">65%</div>
+                        </div>
+                        <img class="likeImg" src="img/like.png">
+                        <img class="likeImg" src="img/like.png">
+                        <img class="likeImg" src="img/like.png">
+                        <img class="likeImg" src="img/like.png">
+                        <img class="likeImg" src="img/like.png">
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+        <div id="col2" class="column" onclick="selectChar('col2','col1','col3')">
+            <table class="charTable">
+                <tr>
+                    <th><img class="thTag" src="img/nodejsIcon.png"></th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="skillbar clearfix " data-percent="40%">
+                            <div class="skillbar-title" style="background: #88cd2a;"><span>Skill</span></div>
+                            <div class="skillbar-bar" style="background: #88cd2a;"></div>
+                            <div class="skill-bar-percent">40%</div>
+                        </div>
+                        <img class="likeImg" src="img/like.png">
+                        <img class="likeImg" src="img/like.png">
+                        <img class="likeImg" src="img/like.png">
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div id="col3" class="column" onclick="selectChar('col3','col1','col2')">
+            <table class="charTable">
+                <tr>
+                    <th><img class="thTag" src="img/javascriptIcon.svg"></th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="skillbar clearfix " data-percent="75%">
+                            <div class="skillbar-title" style="background: #88cd2a;"><span>Skill</span></div>
+                            <div class="skillbar-bar" style="background: #88cd2a;"></div>
+                            <div class="skill-bar-percent">75%</div>
+                        </div>
+                        <img class="likeImg" src="img/like.png">
+                        <img class="likeImg" src="img/like.png">
+                        <img class="likeImg" src="img/like.png">
+                        <img class="likeImg" src="img/like.png">
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <button onclick="go()" >GO!</button>
+    </div> <!--end row div-->
+</div>
+
+<script>
+    document.getElementById("col1").style.opacity=1;
+    let selectedChar="col1";
+
+    jQuery('.skillbar').each(function(){
+        jQuery(this).find('.skillbar-bar').animate({
+            width:jQuery(this).attr('data-percent')
+        },2000);
+    });
+
+    function selectChar(col1,col2,col3) {
+        document.getElementById(col1).style.opacity=1;
+        document.getElementById(col2).style.opacity=0.25;
+        document.getElementById(col3).style.opacity=0.25;
+        selectedChar=col1;
+    }
+
+    function go(){
+        let selectedCharDiv=document.getElementById(selectedChar);
+        console.log(selectedCharDiv.getElementsByClassName("skill-bar-percent")[0].textContent)
+
+    }
+</script>
+
+</body>
+</html>

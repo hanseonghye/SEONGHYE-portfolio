@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://rawgit.com/alvarotrigo/fullPage.js/dev/src/fullpage.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+
+    <style>
+        html, body {
+            height: 100%; /* IMPORTANT!!! stretches viewport to 100% */
+            margin:0px;
+        }
+
+        #context{
+            board:15px solid #000000;
+            /*background: linear-gradient(to bottom, #020111 60%,#20202c 100%);*/
+            height:100%;
+            width:100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .go-button {
+            background-color: #496aeb; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 25px;
+            padding:10px 100px 10px 100px;
+        }
+
+        .abiko-img{
+            width:400px;
+            height:auto;
+        }
+
+
+
+        .glider-page img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .glider-page p h1 h2 h3 h4 h5{
+
+        }
+
+        #page1{
+            /*padding-top: 30px;*/
+            background: #ebd32b;
+        }
+
+        #page2{
+            background: #0a44ca;
+        }
+
+        #page3{
+            background: #ffffff;
+        }
+
+        #page4{
+
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <div id="context">
+        <div id="fullpage">
+            <div class="section">One</div>
+            <div class="section">
+                <div class="slide" data-anchor="slide1">Two 1</div>
+                <div class="slide" data-anchor="slide2">Two 2</div>
+            </div>
+            <div class="section">Three</div>
+            <div class="section">Four</div>
+        </div>
+
+        <!--<div class="glider-contain">-->
+            <!--<div class="glider">-->
+                <!--<div class="glider-page" id="page1">-->
+
+                    <!--<img style="width:70px; height: auto;" src="css/img/like.png">-->
+                    <!--<h4>한성혜</h4>-->
+                    <!--<h5>Back-end & Front-end 개발자</h5>-->
+                    <!--<h5>github.com/hanseonghye</h5>-->
+                    <!--<h5>hans12312@naver.com</h5>-->
+                    <!--<br><br>-->
+                    <!--<button class="go-button" onclick="location.href='choiceChar.html'">PLAY GAME</button>-->
+                <!--</div>-->
+
+                <!--<div class="glider-page" id="page2">-->
+                    <!--<h5>skill</h5>-->
+                <!--</div>-->
+                <!--<div>33</div>-->
+                <!--<div>your content here</div>-->
+
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+
+    <script>
+
+        new fullpage('#fullpage', {
+            sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
+        });
+
+    </script>
+
+</body>
+</html>

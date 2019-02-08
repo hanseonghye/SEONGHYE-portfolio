@@ -34,6 +34,17 @@
 <div id="context">
 
     <section data-role="section" id="section-section1">
+        <div id="pop_up">
+            <div class="overlay" id="overlay" style="display:none;"></div>
+            <div class="box" id="box">
+                <a class="boxclose" id="boxclose"></a>
+                <h1>Important message</h1>
+                <p>
+                    안녕하세요! 신입 웹 개발자 한성혜입니다.&#x1F601;<br>
+                </p>
+            </div>
+        </div>
+
         <div class="page">
             <div id="page1-box">
                 <!--<img style="width:70px; height: auto;" src="css/img/like.png">-->
@@ -267,7 +278,10 @@
         </div>
     </section>
 
-    <section data-role="section" id="section-section4"></section>
+    <section data-role="section" id="section-section4">
+        <div id="page4">
+        </div>
+    </section>
 
 </div>
 <script type="text/javascript">
@@ -283,7 +297,17 @@
         $('#page3btn2').click(function(){
             $('#page3-1').hide();
             $('#page3-2').show();
-        })
+        });
+
+        $('#overlay').fadeIn(200,function(){
+            $('#box').animate({'top':'20px'},200);
+        });
+
+        $('#boxclose').click(function(){
+            $('#box').animate({'top':'-200px'},500,function(){
+                $('#overlay').fadeOut('fast');
+            });
+        });
     })
 </script>
 

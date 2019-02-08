@@ -166,6 +166,17 @@ section {
     float: right;
 }
 
+.page #page3-btn input{
+    background-color: #ffffff;
+    border: none;
+    color: #47b8e0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
 
 
 .page .page3 .row {
@@ -254,7 +265,7 @@ section {
     z-index:100;
 }
 .box{
-    margin-top: 10%;
+
     position:fixed;
     top:-200px;
     left:30%;

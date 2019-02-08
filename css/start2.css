@@ -1,0 +1,228 @@
+#context{
+    board:15px solid #000000;
+    /*background: linear-gradient(to bottom, #020111 60%,#20202c 100%);*/
+    height:100%;
+    width:100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.go-button {
+    background-color: #496aeb; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    padding:10px 100px 10px 100px;
+}
+
+/*.abiko-img{*/
+    /*width:400px;*/
+    /*height:auto;*/
+/*}*/
+
+
+
+.glider-page img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.page{
+    /*text-align:center;*/
+}
+
+section {
+    float: left;
+    display: block;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#section-section1 {
+    background:#ff7473;
+}
+
+#section-section1 .title{
+    margin-left: 10%;
+    font-size: 30pt;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #ffffff;
+    margin-bottom: 5px;
+}
+
+#section-section2 {
+    background:#ffc952;
+
+}
+
+#section-section2 .title{
+    margin-left: 8%;
+    font-size: 30pt;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #ffffff;
+    margin-bottom: 5px;
+}
+#section-section3 {
+    background:#47b8e0;
+}
+
+#section-section3 .title{
+    margin-left: 8%;
+    font-size: 30pt;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #ffffff;
+    margin-top:1px;
+    margin-bottom: 5px;
+}
+
+#section-section4 {
+    background: #34314c;
+}
+
+#page1-box{
+    background-color: rgba(255,255,255,0);
+    width: 20%;
+    min-width: 150px;
+    border: 1px white;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+    border-radius: 5px;
+}
+
+#page1-box img{
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+}
+
+
+.page label{
+    display: inline-block;
+}
+
+
+.page label img{
+    display: inline-block;
+}
+
+.page .page3{
+    display: inline-block;
+}
+
+.page .page3 .project-title #context1{
+    font-weight: bold;;
+    color:#ffffff;
+    font-size:18pt;
+}
+
+.page .page3 .project-title h1{
+    font-weight: bold;
+    color:#ffffff;
+    font-size:25px;
+}
+
+.page #page3-btn{
+    margin-top:5px;
+    margin-right: 5px;
+    float: right;
+}
+
+
+
+.page .page3 .row {
+    content: "";
+    display: table block;
+    clear: both;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page .page3  .row .column{
+    float:left;
+    margin-left: 5%;
+    max-width: 45%;
+    min-width: 44.9% ;
+}
+
+
+.page .page3  .row .column img{
+    float:left;
+    width:33%;
+    height:auto;
+    /*padding-right: 10px;*/
+}
+
+
+.page .page3  .row .column label h5{
+    margin-bottom: 1px;
+}
+
+.page .page3 .row .column .row2{
+    padding-top:20%;
+    margin-left: 5%;
+}
+
+.page .page3  .row .column p{
+    margin-bottom: 1px;
+    margin-top:1px;
+    font-size:10pt;
+}
+
+.page .page3 .bold{
+    color: #020111;
+    font-weight: bold;
+    size:20pt;
+    padding-top:5px;
+    margin-bottom: 5px;
+    /*display:inline-block;*/
+}
+
+
+
+.inline p{
+    display: inline-block;
+}
+
+
+#treemap{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    bottom: 0;
+    margin-left: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.page3 .octocat{
+    width:50px;
+    height: auto;
+    display: inline-block;
+}
+
+.page3-exp{
+    font-size:10pt;
+}
+

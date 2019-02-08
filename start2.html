@@ -3,122 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://rawgit.com/alvarotrigo/fullPage.js/dev/src/fullpage.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery.horizonScroll.js"></script>
+    <script src="js/jquery.touchSwipe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
 
+    <script src="//www.amcharts.com/lib/4/core.js"></script>
+    <script src="//www.amcharts.com/lib/4/charts.js"></script>
+    <script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
+    <link rel="stylesheet" href="css/start2.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
     <style>
         html, body {
             height: 100%; /* IMPORTANT!!! stretches viewport to 100% */
-            margin:0px;
+            margin: 0px;
+            overflow: hidden;
         }
 
-        #context{
-            board:15px solid #000000;
-            /*background: linear-gradient(to bottom, #020111 60%,#20202c 100%);*/
-            height:100%;
-            width:100%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        p, h1, h2, h3, h4, h5 {
+            font-family: 'Noto Sans KR', sans-serif, century-gothic, sans-serif;
+            font-style: normal;
+            font-weight: 400;
         }
-
-        .go-button {
-            background-color: #496aeb; /* Green */
-            border: none;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 25px;
-            padding:10px 100px 10px 100px;
-        }
-
-        .abiko-img{
-            width:400px;
-            height:auto;
-        }
-
-
-
-        .glider-page img{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .glider-page p h1 h2 h3 h4 h5{
-
-        }
-
-        #page1{
-            /*padding-top: 30px;*/
-            background: #ebd32b;
-        }
-
-        #page2{
-            background: #0a44ca;
-        }
-
-        #page3{
-            background: #ffffff;
-        }
-
-        #page4{
-
-        }
-
 
     </style>
 
 </head>
 
 <body>
-    <div id="context">
-        <div id="fullpage">
-            <div class="section">One</div>
-            <div class="section">
-                <div class="slide" data-anchor="slide1">Two 1</div>
-                <div class="slide" data-anchor="slide2">Two 2</div>
+<div id="context">
+
+    <section data-role="section" id="section-section1">
+        <div class="page">
+            <div id="page1-box">
+                <!--<img style="width:70px; height: auto;" src="css/img/like.png">-->
+                <h3 class="title">한성혜</h3>
+                <div class="inline">
+                    <label for="devloper"><img src="css/img/code.svg"></label>
+                    <p id="devloper">BackEnd & FrontEnd 개발자</p>
+                </div>
+                <div class="inline">
+                    <label for="octocat"><img src="css/img/octocat.svg"></label>
+                    <p id="octocat">github.com/hanseonghye</p>
+                </div>
+                <div class="inline">
+                    <label for="email"><img src="css/img/email.svg"></label>
+                    <p id="email">hans12312@naver.com</p>
+                </div>
             </div>
-            <div class="section">Three</div>
-            <div class="section">Four</div>
+            <br>
+            <button class="go-button" onclick="location.href='choiceChar.html'">PLAY GAME</button>
         </div>
+    </section>
 
-        <!--<div class="glider-contain">-->
-            <!--<div class="glider">-->
-                <!--<div class="glider-page" id="page1">-->
+    <section data-role="section" id="section-section2">
+        <div class="page">
+            <p class="title">My Skill</p>
+            <div id="treemap">
+                <script>
 
-                    <!--<img style="width:70px; height: auto;" src="css/img/like.png">-->
-                    <!--<h4>한성혜</h4>-->
-                    <!--<h5>Back-end & Front-end 개발자</h5>-->
-                    <!--<h5>github.com/hanseonghye</h5>-->
-                    <!--<h5>hans12312@naver.com</h5>-->
-                    <!--<br><br>-->
-                    <!--<button class="go-button" onclick="location.href='choiceChar.html'">PLAY GAME</button>-->
-                <!--</div>-->
+                    /* Set themes */
+                    am4core.useTheme(am4themes_animated);
 
-                <!--<div class="glider-page" id="page2">-->
-                    <!--<h5>skill</h5>-->
-                <!--</div>-->
-                <!--<div>33</div>-->
-                <!--<div>your content here</div>-->
+                    let chart = am4core.create("treemap", am4charts.TreeMap);
+                    chart.data = [
+                        {
+                            "name": "BackEnd", "value": 150,
+                            "children": [
+                                {"name": "Flask", "value": 80, "color": "#4194ff"},
+                                {"name": "Django", "value": 20, "color": "#0a44ca"},
+                                {"name": "Node.js", "value": 50, "color": "#0d1794"}
+                            ]
+                        }
+                        ,
+                        {
+                            "name": "FrontEnd", "value": "90",
+                            "children": [
+                                {
+                                    "name": "JavaScript", "value": 60, "color": "#c04328",
+                                    "children": [
+                                        {"name": "Pure Javascript", "value": 35, "color": "#c0642a"},
+                                        {"name": "Vue.js", "value": 17, "color": "#eb9f35"},
+                                        {"name": "JQuery", "value": 8, "color": "#c0b31b"}
+                                    ]
+                                },
+                                {
+                                    "name": "HTML", "value": 20, "color": "#c07c60",
+                                }, {
+                                    "name": "CSS", "value": 10, "color": "#c0596d",
+                                },
+                            ]
+                        },
+                        {
+                            "name": "ETC", "value": 45,
+                            "children": [
+                                {"name": "AWS", "value": 15, "color": "#99ca15"},
+                                {"name": "Docker", "value": 5, "color": "#6fca61"},
+                                {
+                                    "name": "DB", "value": 25, "color": "#008726",
+                                    "children": [
+                                        {"name": "MySql", "value": 10, "color": "#12bc69"},
+                                        {"name": "MongoDB", "value": 15, "color": "#68e5a2"},
+                                    ]
+                                }
+                            ]
+                        }
+                    ];
 
-            <!--</div>-->
-        <!--</div>-->
-    </div>
+                    chart.colors.step = 2;
 
-    <script>
+                    /* Define data fields */
+                    chart.dataFields.value = "value";
+                    chart.dataFields.name = "name";
+                    chart.dataFields.children = "children";
+                    chart.dataFields.color = "color";
+                    /* Create top-level series */
+                    var level1 = chart.seriesTemplates.create("0");
+                    var level1_column = level1.columns.template;
+                    level1_column.fillOpacity = 0;
+                    level1_column.strokeOpacity = 0;
 
-        new fullpage('#fullpage', {
-            sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
-        });
+                    /* Create second-level series */
+                    var level2 = chart.seriesTemplates.create("1");
+                    var level2_column = level2.columns.template;
+                    level2_column.column.cornerRadius(10, 10, 10, 10);
+                    level2_column.fillOpacity = 0.8;
+                    level2_column.stroke = am4core.color("#fff");
+                    level2_column.strokeWidth = 5;
+                    level2_column.strokeOpacity = 1;
 
-    </script>
+                    var level2_bullet = level2.bullets.push(new am4charts.LabelBullet());
+                    level2_bullet.locationY = 0.5;
+                    level2_bullet.locationX = 0.5;
+                    level2_bullet.label.text = "{name}";
+                    level2_bullet.label.fill = am4core.color("#fff");
+
+                    var level3 = chart.seriesTemplates.create("2");
+                    let level3_column = level3.columns.template;
+                    level3_column.column.cornerRadius(10, 10, 10, 10);
+                    level2_column.fillOpacity = 0.8;
+                    level2_column.stroke = am4core.color("#fff");
+                    level2_column.strokeWidth = 5;
+                    level2_column.strokeOpacity = 1;
+
+                    let level3_bullet = level3.bullets.push(new am4charts.LabelBullet());
+                    level3_bullet.locationY = 0.5;
+                    level3_bullet.locationX = 0.5;
+                    level3_bullet.label.text = "{name}";
+                    level3_bullet.label.fill = am4core.color("#000000");
+
+                    /* Add a navigation bar */
+                    chart.navigationBar = new am4charts.NavigationBar();
+
+                </script>
+            </div>
+
+        </div>
+    </section>
+
+    <section data-role="section" id="section-section3" style="overflow:auto">
+        <div class="page">
+            <div id="page3-btn">
+                <input type="button" id="page3btn1" value="1">
+                <input type="button" id="page3btn2" value="2">
+            </div>
+            <div class="page3">
+                <p class="title">My Projects</p>
+
+                <div id="page3-1" class="row">
+                    <div class="column">
+                        <div class="inline project-title">
+                            <label for="context1"><h1>01. </h1></label>
+                            <p id="context1">ABIKO</p>
+                        </div>
+
+                        <table>
+                            <tr>
+                                <th><img src="css/img/abiko1-1.png">
+                                    <img src="css/img/abiko2-1.png">
+                                    <img src="css/img/abiko3-1.png">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="abiko-exp"><p class="bold">Explanation</p></label>
+                                    <p class="page3-exp" id="abiko-exp">
+                                        가고싶은 여행지의 사진을 넣으면 사용자의 현재 위치를 고려하여<br>
+                                        사진과 비슷한 국내 여행지를 추천해 주는 어플리케이션.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="column">
+                        <div class="row2">
+                            <label><p class="bold">참여 인원</p></label>
+                            <p>3명</p>
+
+                            <label><p class="bold">기여도</p></label>
+                            <p>server : 40%<br>client : 80%</p>
+                            <hr width="50%" align="left" style="border: 1px solid #ffffff;">
+
+                            <label for="abiko-skill"><p class="bold">사용기술</p></label>
+                            <p class="page3-exp" id="abiko-skill">
+                                Server : Ubuntu, python flask<br>
+                                Client : android<br>
+                                ETC : Amazon EC2, Google Cloud Platform
+                            </p>
+                            <div class="inline" onclick="location.href='https://github.com/hanseonghye'">
+                                <label for="page3-octocat"><p class="bold">Git : </p></label>
+                                <p id="page3-octocat">github.com/hanseonghye</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-role="section" id="section-section4"></section>
+
+</div>
+<script type="text/javascript">
+    $('section').horizon();
+</script>
+
 
 </body>
 </html>

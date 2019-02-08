@@ -160,13 +160,13 @@ section {
     font-size:25px;
 }
 
-.page #page3-btn{
+.page .page3-btn{
     margin-top:5px;
     margin-right: 5px;
     float: right;
 }
 
-.page #page3-btn input{
+.page .page3-btn input{
     background-color: #ffffff;
     border: none;
     color: #47b8e0;
@@ -177,7 +177,17 @@ section {
     border-radius: 4px;
 }
 
-
+.page .page3-show input{
+    background-color: #ffffff;
+    border: none;
+    color: #47b8e0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 5px;
+}
 
 .page .page3 .row {
     content: "";
@@ -196,6 +206,11 @@ section {
 }
 
 
+.page .page3  .row .column video {
+    width:100%;
+    height:auto;
+
+}
 .page .page3  .row .column img{
     float:left;
     width:33%;

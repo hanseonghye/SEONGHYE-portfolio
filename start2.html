@@ -33,6 +33,9 @@
 <body>
 <div id="context">
 
+    <div class="horizon-prev"><img src="css/img/l-arrow.png"></div>
+    <div class="horizon-next"><img src="css/img/r-arrow.png"></div>
+
     <section data-role="section" id="section-section1">
         <div id="pop_up">
             <div class="overlay" id="overlay" style="display:none;"></div>
@@ -56,15 +59,14 @@
                 </div>
                 <div class="inline">
                     <label for="octocat"><img src="css/img/octocat.svg"></label>
-                    <p id="octocat">github.com/hanseonghye</p>
+                    <p id="octocat"><a href="https://github.com/hanseonghye">github.com/hanseonghye</a></p>
                 </div>
                 <div class="inline">
                     <label for="email"><img src="css/img/email.svg"></label>
                     <p id="email">hans12312@naver.com</p>
                 </div>
             </div>
-            <br>
-            <button class="go-button" onclick="location.href='choiceChar.html'">PLAY GAME</button>
+
         </div>
     </section>
 
@@ -130,27 +132,27 @@
                     chart.dataFields.children = "children";
                     chart.dataFields.color = "color";
                     /* Create top-level series */
-                    var level1 = chart.seriesTemplates.create("0");
-                    var level1_column = level1.columns.template;
+                    let level1 = chart.seriesTemplates.create("0");
+                    let level1_column = level1.columns.template;
                     level1_column.fillOpacity = 0;
                     level1_column.strokeOpacity = 0;
 
                     /* Create second-level series */
-                    var level2 = chart.seriesTemplates.create("1");
-                    var level2_column = level2.columns.template;
+                    let level2 = chart.seriesTemplates.create("1");
+                    let level2_column = level2.columns.template;
                     level2_column.column.cornerRadius(10, 10, 10, 10);
                     level2_column.fillOpacity = 0.8;
                     level2_column.stroke = am4core.color("#fff");
                     level2_column.strokeWidth = 5;
                     level2_column.strokeOpacity = 1;
 
-                    var level2_bullet = level2.bullets.push(new am4charts.LabelBullet());
+                    let level2_bullet = level2.bullets.push(new am4charts.LabelBullet());
                     level2_bullet.locationY = 0.5;
                     level2_bullet.locationX = 0.5;
                     level2_bullet.label.text = "{name}";
                     level2_bullet.label.fill = am4core.color("#fff");
 
-                    var level3 = chart.seriesTemplates.create("2");
+                    let level3 = chart.seriesTemplates.create("2");
                     let level3_column = level3.columns.template;
                     level3_column.column.cornerRadius(10, 10, 10, 10);
                     level2_column.fillOpacity = 0.8;
@@ -297,6 +299,8 @@
 
     <section data-role="section" id="section-section4">
         <div id="page4">
+            <br>
+            <button class="go-button" onclick="location.href='choiceChar.html'">PLAY GAME</button>
         </div>
     </section>
 

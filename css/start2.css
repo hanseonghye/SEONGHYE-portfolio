@@ -329,3 +329,18 @@ a.boxclose{
     -khtml-border-top-left-radius: 20px;
     -khtml-border-top-right-radius: 20px;
 }
+
+.horizon-prev, .horizon-next {
+    position: fixed;
+    top: 50%;
+    margin-top: -24px;
+    z-index: 9999;
+}
+
+.horizon-prev {
+    left: 20px;
+}
+
+.horizon-next {
+    right: 20px;
+}

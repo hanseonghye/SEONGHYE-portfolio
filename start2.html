@@ -167,14 +167,13 @@
                 <input type="button" id="page3btn1" value="1">
                 <input type="button" id="page3btn2" value="2">
             </div>
+            <p class="title">My Projects</p>
             <div class="page3">
-                <p class="title">My Projects</p>
-
                 <div id="page3-1" class="row">
                     <div class="column">
                         <div class="inline project-title">
-                            <label for="context1"><h1>01. </h1></label>
-                            <p id="context1">ABIKO</p>
+                            <label><h1>01. </h1></label>
+                            <p class="context1">ABIKO</p>
                         </div>
 
                         <table>
@@ -186,8 +185,8 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="abiko-exp"><p class="bold">Explanation</p></label>
-                                    <p class="page3-exp" id="abiko-exp">
+                                    <label><p class="bold">Explanation</p></label>
+                                    <p class="page3-exp">
                                         가고싶은 여행지의 사진을 넣으면 사용자의 현재 위치를 고려하여<br>
                                         사진과 비슷한 국내 여행지를 추천해 주는 어플리케이션.
                                     </p>
@@ -204,18 +203,65 @@
                             <p>server : 40%<br>client : 80%</p>
                             <hr width="50%" align="left" style="border: 1px solid #ffffff;">
 
-                            <label for="abiko-skill"><p class="bold">사용기술</p></label>
-                            <p class="page3-exp" id="abiko-skill">
+                            <label><p class="bold">사용기술</p></label>
+                            <p class="page3-exp">
                                 Server : Ubuntu, python flask<br>
                                 Client : android<br>
                                 ETC : Amazon EC2, Google Cloud Platform
                             </p>
-                            <div class="inline" onclick="location.href='https://github.com/hanseonghye'">
-                                <label for="page3-octocat"><p class="bold">Git : </p></label>
-                                <p id="page3-octocat">github.com/hanseonghye</p>
+                            <div class="inline" onclick="window.open('https://github.com/hanseonghye/MJ_project')">
+                                <label><p class="bold">Git : </p></label>
+                                <p>github.com/hanseonghye/MJ_project</p>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div id="page3-2" class="row">
+                    <div class="column">
+                        <div class="inline project-title">
+                            <label><h1>02. </h1></label>
+                            <p class="context1">달려라 한이</p>
+                        </div>
+
+                        <table>
+                            <tr>
+                                <th><img src="css/img/abiko1-1.png">
+                                    <img src="css/img/abiko2-1.png">
+                                    <img src="css/img/abiko3-1.png">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="abiko-exp"><p class="bold">Explanation</p></label>
+                                    <p class="page3-exp" id="abiko-exp">
+                                        학부생들의 소스코드의 표절율을 계산하고 막대, 트리 그래프로 시각화함.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="column">
+                        <div class="row2">
+                            <label><p class="bold">참여 인원</p></label>
+                            <p>2명</p>
+
+                            <label><p class="bold">기여도</p></label>
+                            <p>BackEnd : 90%<br>FrontEnd : 80%</p>
+                            <hr width="50%" align="left" style="border: 1px solid #ffffff;">
+
+                            <label><p class="bold">사용기술</p></label>
+                            <p class="page3-exp" >
+                                BackEnd : Python Flask<br>
+                                FrontEnd : JavaScript, D3.js, Jquery, Ajax
+                            </p>
+                            <div class="inline" onclick="window.open('https://github.com/hanseonghye/Detective-HAN-E')">
+                                <label><p class="bold">Git : </p></label>
+                                <p>github.com/hanseonghye/Detective-HAN-E</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -225,7 +271,20 @@
 
 </div>
 <script type="text/javascript">
-    $('section').horizon();
+    $(document).ready(function(){
+        $('section').horizon();
+        $('#page3-2').hide();
+        $('#page3-1').show();
+        $('#page3btn1').click(function(){
+            $('#page3-2').hide();
+            $('#page3-1').show();
+        });
+
+        $('#page3btn2').click(function(){
+            $('#page3-1').hide();
+            $('#page3-2').show();
+        })
+    })
 </script>
 
 

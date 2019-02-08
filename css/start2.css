@@ -24,6 +24,23 @@
     padding:10px 100px 10px 100px;
 }
 
+
+.go-button {
+    background-color: #496aeb; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    padding:10px 100px 10px 100px;
+}
+
 /*.abiko-img{*/
     /*width:400px;*/
     /*height:auto;*/
@@ -77,6 +94,7 @@ section {
     font-weight: bold;
     text-decoration: underline;
     text-decoration-color: #ffffff;
+    margin-top: 1px;
     margin-bottom: 5px;
 }
 #section-section3 {
@@ -130,7 +148,7 @@ section {
     display: inline-block;
 }
 
-.page .page3 .project-title #context1{
+.page .page3 .project-title .context1{
     font-weight: bold;;
     color:#ffffff;
     font-size:18pt;
@@ -210,10 +228,9 @@ section {
     position: absolute;
     width: 80%;
     height: 80%;
-    bottom: 0;
+    /*bottom: 0;*/
     margin-left: 10%;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top: 5px;
 }
 
 .page3 .octocat{

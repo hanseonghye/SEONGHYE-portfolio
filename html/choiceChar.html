@@ -159,14 +159,14 @@
 <body>
 <div id="context">
     <br>
-    <img src="css/img/backIcon.svg" style="width: 50px; height: auto; margin-left: 10px;" onclick="location.href='start2.html'">
+    <img src="../css/img/backIcon.svg" style="width: 50px; height: auto; margin-left: 10px;" onclick="location.href='start2.html'">
     <br><br>
 
     <div class="row">
         <div id="col1" class="column" onclick="selectChar('col1','col2','col3')">
             <table class="charTable">
                 <tr>
-                    <th ><img class="thTag" src="css/img/pythonIcon.png"></th>
+                    <th ><img class="thTag" src="../css/img/pythonIcon.png"></th>
                 </tr>
                 <tr>
                     <td>
@@ -184,7 +184,7 @@
         <div id="col2" class="column" onclick="selectChar('col2','col1','col3')">
             <table class="charTable">
                 <tr>
-                    <th><img class="thTag" src="css/img/nodejsIcon.png"></th>
+                    <th><img class="thTag" src="../css/img/nodejsIcon.png"></th>
                 </tr>
                 <tr>
                     <td>
@@ -204,7 +204,7 @@
         <div id="col3" class="column" onclick="selectChar('col3','col1','col2')">
             <table class="charTable">
                 <tr>
-                    <th><img class="thTag" src="css/img/javascriptIcon.svg"></th>
+                    <th><img class="thTag" src="../css/img/javascriptIcon.svg"></th>
                 </tr>
                 <tr>
                     <td>
@@ -258,7 +258,7 @@
         document.getElementById(div).innerText=num;
         for(let i=0;i<num;++i) {
             let likeImg=document.createElement("img");
-            likeImg.setAttribute("src","css/img/like.png");
+            likeImg.setAttribute("src","../css/img/like.png");
             likeImg.setAttribute("class","likeImg");
             document.getElementById(div).appendChild(likeImg);
         }

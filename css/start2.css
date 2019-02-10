@@ -134,6 +134,13 @@ section {
     margin-right: 5px;
 }
 
+#page1-box p,a{
+    color: #fff;
+}
+
+/*#page1-box a{*/
+
+/*}*/
 
 .page label{
     display: inline-block;

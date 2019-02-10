@@ -26,7 +26,7 @@
 
     let endScore=20;
     let heartImg=new Image();
-    heartImg.src="css/img/like.png";
+    heartImg.src="../css/img/like.png";
 
     let scoreText={
         x:900,
@@ -48,9 +48,9 @@
             // gamearea.context.fillRect(this.x,this.y,30,30);
         },
         newPos:function(){
-            if(this.y<=150){ //하늘
-                this.speedY=3;
-            }
+            // if(this.y<=150){ //하늘
+            //     this.speedY=3;
+            // }
             this.y=this.y+this.speedY;
 
 

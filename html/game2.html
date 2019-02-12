@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        canvas {
+            board: 15px solid #000000;
+            background: linear-gradient(to bottom, #40405c 0%, #6f71aa 80%, #8a76ab 100%);
+        }
+    </style>
+</head>
+<body onload="startGame()">
+
+<script>
+    let minHeight = 20;
+    let maxHeight = 100;
+    let minWidth = 10;
+    let maxWidth = 20;
+    let minGap = 200;
+    let maxGap = 500;
+    let myObstacles = [];
+    let gap = randGap();
+    let colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+
+    let endScore = 50;
+    let heartImg = new Image();
+    heartImg.src = "../img/like.png";
+
+    let scoreText = {
+        x: 900,
+        y: 50,
+        update: function (text) {
+            gamearea.context.font = "30px Consolas";
+            gamearea.context.fillText(text, this.x, this.y);
+            gamearea.context.fillStyle = "gray";
+        }
+    }
+
+    let player = {
+        x: 20,
+        y: 470,
+        speedY: 0,
+        update: function () {
+            gamearea.context.drawImage(heartImg, this.x, this.y, 30, 30);
+            // gamearea.context.fillStyle="pink";
+            // gamearea.context.fillRect(this.x,this.y,30,30);
+        },
+        newPos: function () {
+            // if(this.y<=150){ //하늘
+            //     this.speedY=3;
+            // }
+            this.y = this.y + this.speedY;
+
+
+            if (this.speedY == 3 && this.y >= 470) {  //땅
+                this.speedY = 0;
+
+            }
+        },
+        crashWithUpper: function (obs) {
+            if (this.x + 30 > obs.x && this.x < obs.x + obs.width && this.y < obs.y) {
+                return true;
+            }
+            return false;
+        },
+        crashWith: function (obs) {
+            if (this.x + 30 > obs.x && this.x < obs.x + obs.width && this.y + 30 > obs.y) {
+                return true;
+            }
+            return false;
+        }
+    }
+
+    function startGame() {
+        gamearea.start();
+    }
+
+    function everyinterval(n) {
+        if (gamearea.frame % n == 0) return true;
+        return false;
+    }
+
+    function randGap() {
+        return Math.floor(minGap + Math.random() * (maxGap - minGap + 1));
+    }
+
+    function obstacle() {
+        this.height = Math.floor(minHeight + Math.random() * (maxHeight - minHeight + 1));
+        this.width = Math.floor(minWidth + Math.random() * (maxWidth - minWidth + 1));
+        this.x = 1200;
+        this.y = gamearea.canvas.height - this.height;
+        this.index = Math.floor(Math.random() * colors.length);
+        this.color = colors[this.index];
+        this.draw = function () {
+            gamearea.context.fillStyle = this.color;
+            gamearea.context.fillRect(this.x, this.y, this.width, this.height);
+        }
+    }
+
+
+    function upperobstacle() {
+        this.height = Math.floor(maxHeight - Math.random() * (maxHeight - minHeight + 1) + 100);
+        this.width = Math.floor(minWidth + Math.random() * (maxWidth - minWidth + 1));
+        this.x = 1200;
+        this.y = this.height;
+        this.index = Math.floor(Math.random() * colors.length);
+        this.color = colors[this.index];
+        this.draw = function () {
+            gamearea.context.fillStyle = this.color;
+            gamearea.context.fillRect(this.x, 0, this.width, this.height);
+        }
+    }
+
+
+    function jump() {
+        player.speedY = -3;
+    }
+
+    let gamearea = {
+        canvas: document.createElement("canvas"),
+        start: function () {
+            this.canvas.height = 500;
+            this.canvas.width = 1200;
+            document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+            this.context = this.canvas.getContext("2d");
+            this.frame = 0;
+            this.score = 0;
+            scoreText.update("Score: " + Math.floor(gamearea.score));
+            this.interval = setInterval(this.updateGameArea, 2);
+            window.addEventListener("keydown", jump);
+        },
+        updateGameArea: function () {
+
+            if (gamearea.score > endScore) {
+                gamearea.stop();
+                alert("good!");
+                return;
+            }
+            for (let i = 0; i < myObstacles.length; ++i) {
+                if (player.crashWith(myObstacles[i])) {
+                    gamearea.stop();
+                    return;
+                }
+            }
+
+            gamearea.clear();
+            if (everyinterval(gap)) {
+                myObstacles.push(new obstacle());
+                gap = randGap();
+                gamearea.frame = 0;
+            }
+
+            for (let i = 0; i < myObstacles.length; i++) {
+                myObstacles[i].x -= 1;
+                myObstacles[i].draw();
+            }
+            player.newPos();
+            player.update();
+            gamearea.frame += 1;
+            gamearea.score += 0.01;
+            scoreText.update("Score: " + Math.floor(gamearea.score));
+
+
+        },
+        clear: function () {
+            gamearea.context.clearRect(0, 0, this.canvas.width, this.canvas.width);
+        },
+        stop: function () {
+            clearInterval(this.interval);
+        }
+    }
+</script>
+</body>
+</html>

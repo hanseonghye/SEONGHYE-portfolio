@@ -3,20 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>한성혜</title>
-    <script src="../js/jquery-1.10.2.js"></script>
-    <script src="../js/jquery.horizonScroll.js"></script>
-    <script src="../js/jquery.touchSwipe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
 
-    <script src="//www.amcharts.com/lib/4/core.js"></script>
-    <script src="//www.amcharts.com/lib/4/charts.js"></script>
-    <script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
     <link rel="stylesheet" href="../css/start2.css"/>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+
     <style>
         html, body {
             height: 100%; /* IMPORTANT!!! stretches viewport to 100% */
-            margin: 0px;
+            margin: 0;
             overflow: hidden;
         }
 
@@ -31,10 +25,11 @@
 </head>
 
 <body>
+
 <div id="context">
 
-    <div class="horizon-prev"><img src="../css/img/l-arrow.png"></div>
-    <div class="horizon-next"><img src="../css/img/r-arrow.png"></div>
+    <div class="horizon-prev"><img src="../img/l-arrow.png"></div>
+    <div class="horizon-next"><img src="../img/r-arrow.png"></div>
 
     <section data-role="section" id="section-section1">
         <div id="pop_up">
@@ -51,18 +46,18 @@
 
         <div class="page">
             <div id="page1-box">
-                <!--<img style="width:70px; height: auto;" src="css/img/like.png">-->
+                <!--<img style="width:70px; height: auto;" src="img/like.png">-->
                 <h3 class="title">한성혜</h3>
                 <div class="inline">
-                    <label for="devloper"><img src="../css/img/code.svg"></label>
+                    <label for="devloper"><img src="../img/code.svg"></label>
                     <p id="devloper">BackEnd & FrontEnd 개발자</p>
                 </div>
                 <div class="inline">
-                    <label for="octocat"><img src="../css/img/octocat.svg"></label>
+                    <label for="octocat"><img src="../img/octocat.svg"></label>
                     <p id="octocat"><a href="https://github.com/hanseonghye">github.com/hanseonghye</a></p>
                 </div>
                 <div class="inline">
-                    <label for="email"><img src="../css/img/email.svg"></label>
+                    <label for="email"><img src="../img/email.svg"></label>
                     <p id="email">hans12312@naver.com</p>
                 </div>
             </div>
@@ -74,8 +69,6 @@
         <div class="page">
             <p class="title">My Skill</p>
             <div id="treemap">
-                <script src="../js/drawTreeMap.js">
-                </script>
             </div>
 
         </div>
@@ -98,9 +91,9 @@
 
                         <table>
                             <tr>
-                                <th><img src="../css/img/abiko1-1.png">
-                                    <img src="../css/img/abiko2-1.png">
-                                    <img src="../css/img/abiko3-1.png">
+                                <th><img src="../img/abiko1-1.png">
+                                    <img src="../img/abiko2-1.png">
+                                    <img src="../img/abiko3-1.png">
                                 </th>
                             </tr>
                             <tr>
@@ -143,7 +136,7 @@
                             <p>- 부산대학교 제1회 소프트웨어 해커톤 장려상</p>
 
                             <div class="page3-show">
-                            <input type="button"  value="시연 영상" onclick="window.open('showAbiko.html')">
+                                <input type="button" value="시연 영상" onclick="window.open('showAbiko.html')">
                             </div>
                         </div>
                     </div>
@@ -159,7 +152,7 @@
                         <table>
                             <tr>
                                 <th>
-                                    <video src="../css/img/han-e.mp4" controls="controls"></video>
+                                    <video src="../img/han-e.mp4" controls="controls"></video>
                                 </th>
                             </tr>
                             <tr>
@@ -185,7 +178,7 @@
                             <hr width="50%" align="left" style="border: 1px solid #ffffff;">
 
                             <label><p class="bold">사용기술</p></label>
-                            <p class="page3-exp" >
+                            <p class="page3-exp">
                                 BackEnd : Python Flask<br>
                                 FrontEnd : JavaScript, D3.js, Jquery, Ajax
                             </p>
@@ -199,7 +192,8 @@
                             <p>- 부산대학교 정보컴퓨터 공학과 2018 졸업과제 우수상</p>
                             <p>- 2018 한국 컴퓨터종합학술대회 논문 게재</p>
                             <div class="page3-show">
-                                <input type="button"  value="논문 보기" onclick="window.open('https://www.eiric.or.kr/community/post2_cseric.php?m=view&gubun=201804&num=15581&pg=1&seGubun=&seGubun1=&SnxGubun=%C6%F7%BD%BA%C5%CD&searchBy=&searchWord=')">
+                                <input type="button" value="논문 보기"
+                                       onclick="window.open('https://www.eiric.or.kr/community/post2_cseric.php?m=view&gubun=201804&num=15581&pg=1&seGubun=&seGubun1=&SnxGubun=%C6%F7%BD%BA%C5%CD&searchBy=&searchWord=')">
                             </div>
                         </div>
                     </div>
@@ -209,40 +203,52 @@
         </div>
     </section>
 
-    <!--<section data-role="section" id="section-section4">-->
-        <!--<div id="page4">-->
-            <!--<br>-->
-            <!--<button class="go-button" onclick="location.href='choiceChar.html'">PLAY GAME</button>-->
-        <!--</div>-->
-    <!--</section>-->
+    <section data-role="section" id="section-section4">
+        <div id="page4">
+            <br>
+            <button class="go-button" onclick="location.href='choiceChar.html'">PLAY GAME</button>
+        </div>
+    </section>
 
 </div>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/jquery.horizonScroll.js"></script>
+<script src="../js/jquery.touchSwipe.js"></script>
+<script src="../js/core.js"></script>
+<script src="../js/chart.js"></script>
+<script src="../js/animated.js"></script>
+
+
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('section').horizon();
         $('#page3-2').hide();
         $('#page3-1').show();
-        $('#page3btn1').click(function(){
+        $('#page3btn1').click(function () {
             $('#page3-2').hide();
             $('#page3-1').show();
         });
 
-        $('#page3btn2').click(function(){
+        $('#page3btn2').click(function () {
             $('#page3-1').hide();
             $('#page3-2').show();
         });
 
-        $('#overlay').fadeIn(200,function(){
-            $('#box').animate({'top':'20px'},200);
+        $('#overlay').fadeIn(200, function () {
+            $('#box').animate({'top': '20px'}, 200);
         });
 
-        $('#boxclose').click(function(){
-            $('#box').animate({'top':'-200px'},500,function(){
+        $('#boxclose').click(function () {
+            $('#box').animate({'top': '-200px'}, 500, function () {
                 $('#overlay').fadeOut('fast');
             });
         });
     })
 </script>
+
+<script src="../js/drawTreeMap.js">
+</script>
+
 
 
 </body>

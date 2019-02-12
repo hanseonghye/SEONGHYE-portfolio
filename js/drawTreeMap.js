@@ -5,9 +5,9 @@ chart.data = [
     {
         "name": "BackEnd", "value": 150,
         "children": [
-            {"name": "Flask", "value": 80, "color": "#4194ff"},
-            {"name": "Django", "value": 20, "color": "#0a44ca"},
-            {"name": "Node.js", "value": 50, "color": "#0d1794"}
+            {"name": "Flask", "value": 80, "color": "#0b147e"},
+            {"name": "Django", "value": 20, "color": "#2f64ff"},
+            {"name": "Node.js", "value": 50, "color": "#1220cb"}
         ]
     }
     ,

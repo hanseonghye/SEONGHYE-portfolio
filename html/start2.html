@@ -220,6 +220,16 @@
 
 
 <script type="text/javascript">
+    $('#overlay').fadeIn(200, function () {
+        $('#box').animate({'top': '20px'}, 200);
+    });
+
+    $('#boxclose').click(function () {
+        $('#box').animate({'top': '-200px'}, 500, function () {
+            $('#overlay').fadeOut('fast');
+        });
+    });
+
     $(document).ready(function () {
         $('section').horizon();
         $('#page3-2').hide();
@@ -234,15 +244,6 @@
             $('#page3-2').show();
         });
 
-        $('#overlay').fadeIn(200, function () {
-            $('#box').animate({'top': '20px'}, 200);
-        });
-
-        $('#boxclose').click(function () {
-            $('#box').animate({'top': '-200px'}, 500, function () {
-                $('#overlay').fadeOut('fast');
-            });
-        });
     })
 </script>
 

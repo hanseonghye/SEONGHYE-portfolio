@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="">
     <title>한성혜</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
     <link rel="stylesheet" href="../css/choiceChar.css"/>
@@ -21,6 +22,45 @@
             height: 100%;
         }
 
+        div#pop-up {
+            display: none;
+            position: absolute;
+            width: 50%;
+            min-width: 400px;
+            max-width: 450px;
+            height: auto;
+            padding: 2px 10px 2px 10px;
+            background: rgba(255, 255, 255, 0.85);
+            color: #000000;
+            border: 1px solid #1a1a1a;
+            border-radius: 7px;
+            font-size: 90%;
+            left: 60%;
+            /*float: right;*/
+            margin-right: 10px;
+        }
+
+        div#pop-up .text img {
+            height: 30px;
+            width: auto;
+            display: inline-block;
+            margin-right: 2px;
+        }
+
+        div#pop-up .text {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        div#pop-up .text p {
+            font-family: 'Noto Sans KR', sans-serif, century-gothic, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 50px;
+            font-weight: bolder;
+        }
+
     </style>
 </head>
 <body>
@@ -28,6 +68,8 @@
     <br>
     <img src="../img/backIcon.svg" style="width: 50px; height: auto; margin-left: 10px;"
          onclick="location.href='start2.html'">
+
+    <button id="how" onclick="" class="gameInfor-button">HOW?</button>
     <br><br>
 
     <div class="row">
@@ -89,6 +131,18 @@
             <br><br>
         </div>
 
+        <div id="pop-up">
+            <div class="text">
+                <p>
+                    <img src="../img/game/f.png">를 피해
+                    <img src="../img/game/item/chicken.png">
+                    <img src="../img/game/item/hamburger.png">
+                    <img src="../img/game/item/cup-cake.png">
+                    를 먹어 100점을 만들어 주세요!<br>
+                    <img src="../img/game/heart.png">만큼의 기회가 있어요.
+                </p>
+            </div>
+        </div>
         <button onclick="go()" class="go-button">GO!</button>
 
     </div> <!--end row div-->
@@ -127,6 +181,12 @@
             document.getElementById(div).appendChild(likeImg);
         }
     }
+
+    $('#how').hover(function () {
+        $('div#pop-up').show();
+    }, function () {
+        $('div#pop-up').hide();
+    });
 </script>
 
 </body>

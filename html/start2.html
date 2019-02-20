@@ -68,7 +68,7 @@
 
     <section data-role="section" id="section-section2">
         <div class="page">
-            <p class="title">My Skill</p>
+            <p class="title">My Skills</p>
             <div id="treemap">
             </div>
 
@@ -221,6 +221,12 @@
 
 
 <script type="text/javascript">
+
+    let browser = navigator.userAgent.toLowerCase();
+    if ( (browser.indexOf("chrome") == -1) && (browser.indexOf("firefox") == -1)  ){
+        location.href="browserErr.html"
+    }
+
     $('#overlay').fadeIn(200, function () {
         $('#box').animate({'top': '20px'}, 200);
     });

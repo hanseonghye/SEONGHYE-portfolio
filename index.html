@@ -7,7 +7,14 @@
 </head>
 <body>
 <script>
-    location.href = "html/start2.html"
+    let browser = navigator.userAgent.toLowerCase();
+    if ( (browser.indexOf("chrome") == -1) && (browser.indexOf("firefox") == -1) ){
+        location.href="html/browserErr.html"
+    }
+    else {
+        location.href = "html/start2.html"
+    }
+
 </script>
 
 </body>

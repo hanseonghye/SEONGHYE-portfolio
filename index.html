@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="img/smile.ico"  type="image/png" sizes="32x32">
-    <title>한성혜</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/smile.png"  type="image/png" sizes="32x32">
+    <title>개발자 한성혜</title>
+    <meta name="description" content="한성혜 포트폴리오 v0">
+
 </head>
 <body>
 <script>
     let browser = navigator.userAgent.toLowerCase();
-    if ( (browser.indexOf("chrome") == -1) && (browser.indexOf("firefox") == -1) ){
+    if ( (browser.indexOf("chrome") === -1) && (browser.indexOf("firefox") === -1) ){
         location.href="html/browserErr.html"
     }
     else {
-        location.href = "html/start2.html"
+        location.href = "html/main.html"
     }
 
 </script>

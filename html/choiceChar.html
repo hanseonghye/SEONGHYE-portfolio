@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="">
-    <title>한성혜</title>
+    <title>개발자 한성혜</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
     <link rel="stylesheet" href="../css/choiceChar.css"/>
     <style>
@@ -17,7 +17,7 @@
         }
 
         #context {
-            board: 15px solid #000000;
+            /*board: 15px solid #000000;*/
             background: linear-gradient(to bottom, #020111 60%, #20202c 100%);
             height: 100%;
         }
@@ -56,7 +56,6 @@
         div#pop-up .text p {
             font-family: 'Noto Sans KR', sans-serif, century-gothic, sans-serif;
             font-style: normal;
-            font-weight: 400;
             line-height: 50px;
             font-weight: bolder;
         }
@@ -67,7 +66,7 @@
 <div id="context">
     <br>
     <img src="../img/backIcon.svg" style="width: 50px; height: auto; margin-left: 10px;"
-         onclick="location.href='start2.html'">
+         onclick="location.href='main.html'">
 
     <button id="how" onclick="" class="gameInfor-button">HOW?</button>
     <br><br>
@@ -150,7 +149,7 @@
 
 <script src="../js/jquery-1.10.2.js"></script>
 <script>
-    document.getElementById("col1").style.opacity = 1;
+    document.getElementById("col1").style.opacity = "1";
     let selectedChar = "col1";
     makeLike("col1LikeDiv", 5);
     makeLike("col2LikeDiv", 4);
@@ -162,9 +161,9 @@
     });
 
     function selectChar(col1, col2, col3) {
-        document.getElementById(col1).style.opacity = 1;
-        document.getElementById(col2).style.opacity = 0.25;
-        document.getElementById(col3).style.opacity = 0.25;
+        document.getElementById(col1).style.opacity = "1";
+        document.getElementById(col2).style.opacity = "0.25";
+        document.getElementById(col3).style.opacity = "0.25";
         selectedChar = col1;
     }
 

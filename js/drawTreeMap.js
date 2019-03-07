@@ -3,19 +3,22 @@ am4core.useTheme(am4themes_animated);
 let chart = am4core.create("treemap", am4charts.TreeMap);
 chart.data = [
     {
-        "name": "BackEnd", "value": 150,
+        "name": "BackEnd",
+        "value": 150,
         "children": [
             {"name": "Flask", "value": 80, "color": "#0b147e"},
             {"name": "Django", "value": 20, "color": "#2f64ff"},
             {"name": "Node.js", "value": 50, "color": "#1220cb"}
         ]
-    }
-    ,
+    },
     {
-        "name": "FrontEnd", "value": "90",
+        "name": "FrontEnd",
+        "value": "90",
         "children": [
             {
-                "name": "JavaScript", "value": 60, "color": "#c04328",
+                "name": "JavaScript",
+                "value": 60,
+                "color": "#c04328",
                 "children": [
                     {"name": "Pure Javascript", "value": 35, "color": "#c0642a"},
                     {"name": "Vue.js", "value": 17, "color": "#eb9f35"},
@@ -23,22 +26,30 @@ chart.data = [
                 ]
             },
             {
-                "name": "HTML", "value": 20, "color": "#c07c60",
-            }, {
-                "name": "CSS", "value": 10, "color": "#c0596d",
+                "name": "HTML",
+                "value": 20,
+                "color": "#c07c60"
             },
+            {
+                "name": "CSS",
+                "value": 10,
+                "color": "#c0596d"
+            }
         ]
     },
     {
-        "name": "ETC", "value": 45,
+        "name": "ETC",
+        "value": 45,
         "children": [
             {"name": "AWS", "value": 15, "color": "#99ca15"},
             {"name": "Docker", "value": 5, "color": "#6fca61"},
             {
-                "name": "DB", "value": 25, "color": "#008726",
+                "name": "DB",
+                "value": 25,
+                "color": "#008726",
                 "children": [
                     {"name": "MySql", "value": 10, "color": "#12bc69"},
-                    {"name": "MongoDB", "value": 15, "color": "#68e5a2"},
+                    {"name": "MongoDB", "value": 15, "color": "#68e5a2"}
                 ]
             }
         ]
